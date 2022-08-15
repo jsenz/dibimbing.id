@@ -10,7 +10,7 @@ public class QuerySP {
             "INOUT resnama character varying, " +
             "INOUT resjk character varying, " +
             "INOUT resdob date, " +
-            "INOUT resalamat text, " +
+            "INOUT resalamat character varying, " +
             "INOUT resstatus character varying, " +
             "INOUT resnik character varying, " +
             "INOUT resnpwp character varying, " +
@@ -54,7 +54,7 @@ public class QuerySP {
             "INOUT resnama character varying, " +
             "INOUT resjk character varying, " +
             "INOUT resdob date, " +
-            "INOUT resalamat text, " +
+            "INOUT resalamat character varying, " +
             "INOUT resstatus character varying, " +
             "INOUT resnik character varying, " +
             "INOUT resnpwp character varying, " +
@@ -86,7 +86,7 @@ public class QuerySP {
             ";\n";
 
     public String getkaryawan = "CREATE OR REPLACE FUNCTION public.getkaryawan(rqid bigint)\n" +
-            " RETURNS TABLE(resid bigint, resnama character varying, resjk character varying, resdob date, resalamat text, resstatus character varying, resnik character varying, resnpwp character varying)\n" +
+            " RETURNS TABLE(resid bigint, resnama character varying, resjk character varying, resdob timestamp without time zone, resalamat character varying, resstatus character varying, resnik character varying, resnpwp character varying)\n" +
             " LANGUAGE plpgsql\n" +
             "AS $function$\n" +
             "\tBEGIN\n" +
@@ -103,8 +103,8 @@ public class QuerySP {
             "resid bigint, " +
             "resnama character varying, " +
             "resjk character varying, " +
-            "resdob date, " +
-            "resalamat text, " +
+            "resdob timestamp without time zone, " +
+            "resalamat character varying, " +
             "resstatus character varying, " +
             "resnik character varying, " +
             "resnpwp character varying)\n" +
